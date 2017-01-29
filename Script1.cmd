@@ -20,5 +20,18 @@ plink azureuser@tcdlnk01mgmt.westeurope.cloudapp.azure.com -A -P 2200 -ssh -C -i
 # locale la porta di comunicazione con lo swarm manager.
 plink azureuser@tcdlnk01mgmt.westeurope.cloudapp.azure.com -A -P 2200 -ssh -C -i id_rsa.ppk -L 2376:localhost:2375 -N
 
-# Scarico la versione compatibile con lo swarm:
-Invoke-WebRequest https://get.docker.com/builds/Windows/x86_64/docker-1.12.0.zip -UseBasicParsing -OutFile docker.zip
+# Scaricare la versione compatibile con lo swarm:
+Invoke-WebRequest https://get.docker.com/builds/Windows/x86_64/docker-1.11.2.zip -UseBasicParsing -OutFile docker.zip
+
+# Decomprimere in una cartella 
+Expand-Archive docker.zip -DestinationPath .
+
+# Verificare la versione del remote API client presente nella cli
+.\docker\docker.exe version
+
+# Usare la cli per avere informazioni sullo swarm
+.\docker\docker.exe -H 127.0.0.1:2376 info
+
+# URL repository versioni Docker Engine
+# https://github.com/docker/docker/tags
+

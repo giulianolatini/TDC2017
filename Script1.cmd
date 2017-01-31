@@ -35,3 +35,9 @@ Expand-Archive docker.zip -DestinationPath .
 # URL repository versioni Docker Engine
 # https://github.com/docker/docker/tags
 
+# URL Repository materiale TDC2017
+# https://github.com/giulianolatini/TDC2017
+
+# URL Repository Magento
+# https://github.com/meanbee/docker-magento2
+

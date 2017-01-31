@@ -32,6 +32,16 @@ Expand-Archive docker.zip -DestinationPath .
 # Usare la cli per avere informazioni sullo swarm
 .\docker\docker.exe -H 127.0.0.1:2376 info
 
+# Installare Magento2:
+cd docker-magento2
+docker-compose -H 127.0.0.1:2376 run cli bash
+..\docker\docker.exe -H 127.0.0.1:2376 start --attach --interactive dockermagento2_cli_run_1
+cd /var/www/magento
+magento-installer
+
+# Eseguire Magento2:
+docker-compose -H 127.0.0.1:2376 up -d
+
 # URL repository versioni Docker Engine
 # https://github.com/docker/docker/tags
 

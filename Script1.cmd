@@ -52,3 +52,5 @@ docker-compose -H 127.0.0.1:2376 up -d
 # URL Repository Magento
 # https://github.com/meanbee/docker-magento2
 
+# URL Gist per Q&A su questo talk
+# https://gist.github.com/giulianolatini/181e57732aef9f388d2403b4208c8d2f

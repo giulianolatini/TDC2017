@@ -19,6 +19,7 @@ plink azureuser@tcdlnk01mgmt.westeurope.cloudapp.azure.com -A -P 2200 -ssh -C -i
 # Creare un tunnel tra lo swarm in esecuzione per presentare alla cli
 # locale la porta di comunicazione con lo swarm manager.
 plink azureuser@tcdlnk01mgmt.westeurope.cloudapp.azure.com -A -P 2200 -ssh -C -i id_rsa.ppk -L 2376:localhost:2375 -N
+plink azureuser@tcdlnk01mgmt.westeurope.cloudapp.azure.com -A -P 2200 -ssh -C -i id_rsa.ppk -L 80:localhost:32849 -N
 
 # Scaricare la versione compatibile con lo swarm:
 Invoke-WebRequest https://get.docker.com/builds/Windows/x86_64/docker-1.11.2.zip -UseBasicParsing -OutFile docker.zip
